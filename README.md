@@ -1,4 +1,5 @@
-# emoji-transmogrifier [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# emoji-transmogrifier
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > A handy little library (written as a Node.js module) for converting emoji short codes into HTML image tags. This is mostly a project to force myself to go through all the steps of creating a Node module.
 
 ## Transmogrifier
