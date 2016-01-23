@@ -1,17 +1,17 @@
 {
   "name": "emoji-transmogrifier",
-  "version": "1.0.0",
+  "version": "1.0.0-beta0",
   "description": "a handy little library for converting emoji short codes to html image tags",
   "homepage": "https://edm00se.github.io/emoji-transmogrifier",
   "author": {
     "name": "Eric McCormick",
     "email": "edm00se@gmail.com",
-    "url": "https://edm00se.io/"
+    "url": "https://edm00se.github.com/emoji-transmogrifier"
   },
   "files": [
     "src"
   ],
-  "main": "./src/index.js",
+  "main": "./src/server/index.js",
   "bin": "./bin/index.js",
   "keywords": [
     "emoji",
@@ -41,5 +41,9 @@
     "test": "gulp"
   },
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "commander": "2.9.0",
+    "fs": "0.0.2",
+    "update-notifier": "0.6.0"
+  }
 }
