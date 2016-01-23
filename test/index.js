@@ -17,4 +17,7 @@ describe('emoji-transmogrifier', function () {
       transmogrify.getUnicode('beers') === '0x1f37b',
       'beers code is 0x1f37b');
   });
+  it('should have tests for the cli component', function(){
+  	assert(true, 'but let\'s face it, it assumes defaults for all options and just runs');
+  });
 });

@@ -1,29 +1,40 @@
 # emoji-transmogrifier [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 > A handy little library (written as a Node.js module) for converting emoji short codes into HTML image tags. This is mostly a project to force myself to go through all the steps of creating a Node module.
 
+## Transmogrifier
+[![Calvin and Hobbes](src/assets/zap.jpg)](http://www.calvinandhobbes.com/)
+
 ## Installation
 
-TODO: publish to npmjs.org
-
+#### Globally
 ```sh
 $ npm install -g emoji-transmogrifier
 ```
 
+#### Locally
+```sh
+$ npm install emoji-transmogrifier
+```
+
 ## Usage
 
-Using the module is currently available from the command line, though I may eventually expand this to be consumable as a "normal" Node module (aka- via a `require()` statement).
+Using the module is currently available from the command line as a brief utility to autmoate the conversion of the short code strings in markdown or html files and for traditional Node module consumption (aka- via a `require()` statement).
 
+#### CLI Conversion Utility
 ```sh
-emoji-transmogrifier -in sourceFile -out destFile
+emoji-transmogrifier -d <directory/> -t [md|markdown|html|htm]
 ```
 
-<!--
+#### Server Module
 ```js
-var emojiTransmogrifier = require('emoji-transmogrifier');
+var transmogrifier = require('emoji-transmogrifier');
 
-emojiTransmogrifier('Rainbow');
+var beerEmojiUrl = transmogrifier.getImage('beer');
+console.log('the url of the GitHub emoji image for beer is: '+beerEmojiUrl);
+
+var beerUniStr = transmogrifier.getUnicode('beer');
+console.log('the unicode string for beer is: '+beerUniStr);
 ```
--->
 
 
 ## History
@@ -43,7 +54,7 @@ The pattern itself:
 ```
 
 ## Contributing
-Once the project is off the ground and published to npm, you may contribute by Pull Request.
+You may contribute by submitting [a Pull Request](https://help.github.com/articles/proposing-changes-to-a-project-with-pull-requests/) to this repository.
 
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
