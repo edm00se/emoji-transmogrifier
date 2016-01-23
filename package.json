@@ -11,22 +11,24 @@
     "src"
   ],
   "main": "./src/server/index.js",
-  "bin": "./bin/index.js",
+  "bin": "./src/cli/index.js",
   "keywords": [
     "emoji",
     "image",
     "convert"
   ],
   "devDependencies": {
+    "commitizen": "2.5.0",
+    "cz-conventional-changelog": "1.1.5",
     "eslint-config-xo-space": "0.7.0",
     "gulp": "3.9.0",
+    "gulp-coveralls": "0.1.0",
     "gulp-eslint": "1.0.0",
     "gulp-exclude-gitignore": "1.0.0",
     "gulp-istanbul": "0.10.3",
     "gulp-mocha": "2.0.0",
-    "gulp-plumber": "1.0.0",
     "gulp-nsp": "2.1.0",
-    "gulp-coveralls": "0.1.0",
+    "gulp-plumber": "1.0.0",
     "semantic-release": "4.3.5"
   },
   "eslintConfig": {
@@ -42,12 +44,16 @@
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "commit": "git-cz"
   },
   "license": "MIT",
   "dependencies": {
     "commander": "2.9.0",
     "fs": "0.0.2",
     "update-notifier": "0.6.0"
+  },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
   }
 }
