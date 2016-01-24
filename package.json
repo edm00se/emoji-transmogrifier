@@ -45,7 +45,7 @@
   },
   "scripts": {
     "prepublish": "gulp prepublish",
-    "test": "istanbul cover -x test/*.js ./node_modules/mocha/bin/mocha -- -R spec test/index.js",
+    "test": "./node_modules/istanbul/lib/cli.js cover -x test/*.js ./node_modules/mocha/bin/mocha -- -R spec test/index.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "commit": "git-cz",
     "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100"
