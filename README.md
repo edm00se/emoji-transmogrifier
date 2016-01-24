@@ -58,14 +58,14 @@ The pattern itself:
 /(\:(\w|\+|\-)+\:)(?=\s|[\!\.\?]|$)/gim
 ```
 
-## Future PLans
+## Future Plans
 Currently plan:
 
-* complete coveralls implementation
-* add alternate cli function of exposing the internal methods to the 'server' module
-  * provide return of image path (href)
-  * provide return of unicode string
-* provide current conversion function ability to traverse subdirectories
+- [X] complete coveralls implementation
+- add alternate cli function of exposing the internal methods to the 'server' module
+  - provide return of image path (href)
+  - provide return of unicode string
+- provide current conversion function ability to traverse subdirectories
 
 ## Contributing
 You may contribute by submitting [a Pull Request](https://help.github.com/articles/proposing-changes-to-a-project-with-pull-requests/) to this repository.
