@@ -23,10 +23,12 @@ $ npm install emoji-transmogrifier
 
 Using the module is currently available from the command line as a brief utility to autmoate the conversion of the short code strings in markdown or html files and for traditional Node module consumption (aka- via a `require()` statement).
 
-#### CLI Conversion Utility
+#### CLI Utility
 ```sh
-emoji-transmogrifier -d <directory/> -t [md|markdown|html|htm]
+emoji-transmogrifier (-d <directory/> -t [md|markdown|html|htm])
 ```
+
+The cli utility defaults to the current directory and markdown files, specifically with the `.md` extension. This can optionally be changed (with `-t`) to `.markdown`, `.html`, or `.htm` files and a different directory can be specified (with `-d`).
 
 #### Server Module
 ```js
@@ -55,6 +57,15 @@ The pattern itself:
 ```js
 /(\:(\w|\+|\-)+\:)(?=\s|[\!\.\?]|$)/gim
 ```
+
+## Future PLans
+Currently plan:
+
+* complete coveralls implementation
+* add alternate cli function of exposing the internal methods to the 'server' module
+  * provide return of image path (href)
+  * provide return of unicode string
+* provide current conversion function ability to traverse subdirectories
 
 ## Contributing
 You may contribute by submitting [a Pull Request](https://help.github.com/articles/proposing-changes-to-a-project-with-pull-requests/) to this repository.
