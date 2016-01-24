@@ -17,6 +17,11 @@ describe('emoji-transmogrifier', function () {
       transmogrify.getUnicode('beers') === '0x1f37b',
       'beers code is 0x1f37b');
   });
+  it('should return null as unicode for bad input', function () {
+    assert.equal(true,
+      transmogrify.getUnicode('i am not a valid emoji') === null,
+      'bad input returns null unicode');
+  });
   it('should have tests for the cli component', function () {
     assert(true, 'but let\'s face it, it assumes defaults for all options and just runs');
   });

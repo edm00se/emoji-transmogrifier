@@ -21,6 +21,7 @@
     "commitizen": "2.5.0",
     "cz-conventional-changelog": "1.1.5",
     "eslint-config-xo-space": "0.7.0",
+    "ghooks": "1.0.3",
     "gulp": "3.9.0",
     "gulp-coveralls": "0.1.0",
     "gulp-eslint": "1.0.0",
@@ -29,6 +30,7 @@
     "gulp-mocha": "2.0.0",
     "gulp-nsp": "2.1.0",
     "gulp-plumber": "1.0.0",
+    "istanbul": "0.4.2",
     "semantic-release": "4.3.5"
   },
   "eslintConfig": {
@@ -43,9 +45,10 @@
   },
   "scripts": {
     "prepublish": "gulp prepublish",
-    "test": "gulp",
+    "test": "istanbul cover -x test/*.js _mocha -- -R spec test/index.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100"
   },
   "license": "MIT",
   "dependencies": {
@@ -56,5 +59,10 @@
   "czConfig": {
     "path": "node_modules/cz-conventional-changelog"
   },
-  "tonicExampleFilename": "example.js"
+  "tonicExampleFilename": "example.js",
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run test && npm run check-coverage"
+    }
+  }
 }

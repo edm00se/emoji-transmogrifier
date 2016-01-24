@@ -10,12 +10,13 @@ function getImg(key) {
   return emojisOb[key];
 }
 function getUni(key) {
-  var url = emojisOb[key];
-  if (url === null) {
+  try {
+    var url = emojisOb[key];
+    var tmpCode = extractEmojiUnicodeFromUrl(url);
+    return '0x' + tmpCode;
+  } catch (e) {
     return null;
   }
-  var tmpCode = extractEmojiUnicodeFromUrl(url);
-  return '0x' + tmpCode;
 }
 function extractEmojiUnicodeFromUrl(val) {
   var nwVal = val.split('unicode/')[1].split('?')[0].split('.png')[0];
