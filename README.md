@@ -1,6 +1,6 @@
 # emoji-transmogrifier
 
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+[![NPM version][npm-image]][npm-url] [![NPM downloads][npm-downloads]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
 > A handy little library (written as a Node.js module) for converting emoji short codes into HTML image tags. This is mostly a project to force myself to go through all the steps of creating a Node module.
 
@@ -82,6 +82,7 @@ MIT © [Eric McCormick](https://github.com/edm00se)
 
 
 [npm-image]: https://badge.fury.io/js/emoji-transmogrifier.svg
+[npm-downloads]: https://img.shields.io/npm/dt/emoji-transmogrifier.svg
 [npm-url]: https://npmjs.org/package/emoji-transmogrifier
 [travis-image]: https://travis-ci.org/edm00se/emoji-transmogrifier.svg?branch=master
 [travis-url]: https://travis-ci.org/edm00se/emoji-transmogrifier
