@@ -49,7 +49,7 @@
     "test": "gulp && istanbul cover -x test/*.js _mocha -- -R spec test/index.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "commit": "git-cz",
-    "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100"
+    "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100 && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js || true"
   },
   "license": "MIT",
   "dependencies": {
