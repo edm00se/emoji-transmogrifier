@@ -18,6 +18,7 @@
     "convert"
   ],
   "devDependencies": {
+    "codecov": "1.0.1",
     "commitizen": "2.5.0",
     "cz-conventional-changelog": "1.1.5",
     "eslint-config-xo-space": "0.7.0",
@@ -42,11 +43,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/edm00se/emoji-transmogrifier.git"
+    "url": "https://github.com/edm00se/emoji-transmogrifier"
   },
   "scripts": {
     "prepublish": "gulp prepublish",
-    "test": "gulp && istanbul cover -x test/*.js _mocha -- -R spec test/index.js",
+    "test": "gulp && istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec && ./node_modules/codecov/bin/codecov",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "commit": "git-cz",
     "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100 && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js || true"
