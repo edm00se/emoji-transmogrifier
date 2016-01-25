@@ -47,7 +47,7 @@
   },
   "scripts": {
     "prepublish": "gulp prepublish",
-    "test": "gulp && istanbul cover -x test/*.js ./node_modules/mocha/bin/_mocha -- -R spec test/index.js && ./node_modules/codecov.io/bin/codecov",
+    "test": "gulp && istanbul cover -x test/*.js ./node_modules/mocha/bin/_mocha -- -R spec test/index.js && ./node_modules/codecov.io/bin/codecov.io.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "commit": "git-cz",
     "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100 && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js || true"
