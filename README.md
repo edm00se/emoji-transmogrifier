@@ -1,6 +1,6 @@
 # emoji-transmogrifier
 
-[![NPM version][npm-image]][npm-url] [![NPM downloads][npm-downloads]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url] [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![NPM version][npm-image]][npm-url] [![NPM downloads][npm-downloads]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Codecov][codecov-image]][codecov-url] [![semantic-release][semantic-release-image]][semantic-release-url] [![npm][npm-license]][npm-url]
 
 > A handy little library (written as a Node.js module) for converting emoji short codes into HTML image tags. This is mostly a project to force myself to go through all the steps of creating a Node module.
 
@@ -84,9 +84,12 @@ MIT © [Eric McCormick](https://github.com/edm00se)
 [npm-image]: https://badge.fury.io/js/emoji-transmogrifier.svg
 [npm-downloads]: https://img.shields.io/npm/dt/emoji-transmogrifier.svg
 [npm-url]: https://npmjs.org/package/emoji-transmogrifier
+[npm-license]: https://img.shields.io/npm/l/emoji-transmogrifier.svg
 [travis-image]: https://travis-ci.org/edm00se/emoji-transmogrifier.svg?branch=master
 [travis-url]: https://travis-ci.org/edm00se/emoji-transmogrifier
 [daviddm-image]: https://david-dm.org/edm00se/emoji-transmogrifier.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/edm00se/emoji-transmogrifier
-[coveralls-image]: https://coveralls.io/repos/edm00se/emoji-transmogrifier/badge.svg
-[coveralls-url]: https://coveralls.io/r/edm00se/emoji-transmogrifier
+[codecov-url]: https://codecov.io/github/edm00se/emoji-transmogrifier
+[codecov-image]: https://img.shields.io/codecov/c/github/edm00se/emoji-transmogrifier.svg
+[semantic-release-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+[semantic-release-url]: https://github.com/semantic-release/semantic-release
