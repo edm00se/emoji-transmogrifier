@@ -18,7 +18,7 @@
     "convert"
   ],
   "devDependencies": {
-    "codecov": "1.0.1",
+    "codecov.io": "1.0.1",
     "commitizen": "2.5.0",
     "cz-conventional-changelog": "1.1.5",
     "eslint-config-xo-space": "0.7.0",
