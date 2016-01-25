@@ -45,7 +45,7 @@ module.exports = function () {
             foundMatch = true;
             // console.log('found a match for '+prop+' in '+file);
             var nwRe = new RegExp(':' + prop + ':', 'gi');
-            var url = 'https://assets-cdn.github.com/images/icons/emoji/unicode/' + emojisOb[prop] + '.png?v5';
+            var url = emojisOb[prop];
             result = result.replace(nwRe, '<img src="' + url + '" alt="' + prop + '" style="height:auto;width:21px;">');
           }
         }
