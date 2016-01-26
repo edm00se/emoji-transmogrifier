@@ -8,15 +8,11 @@
 [![Calvin and Hobbes](src/assets/zap.jpg)](http://www.calvinandhobbes.com/)
 
 ## Installation
+[![NPM](https://nodei.co/npm/emoji-transmogrifier.png)](https://nodei.co/npm/emoji-transmogrifier/)
 
 #### Globally
 ```sh
 $ npm install -g emoji-transmogrifier
-```
-
-#### Locally
-```sh
-$ npm install emoji-transmogrifier
 ```
 
 ## Usage
