@@ -24,11 +24,24 @@ $ npm install emoji-transmogrifier
 Using the module is currently available from the command line as a brief utility to autmoate the conversion of the short code strings in markdown or html files and for traditional Node module consumption (aka- via a `require()` statement).
 
 #### CLI Utility
-```sh
-emoji-transmogrifier (-d <directory/> -t [md|markdown|html|htm])
-```
+The command line tool now has the previous functionality under the `zap` command and provides the server module's `getImage` and `getUnicode` functionality exposed by the `unicode` (or `uni`) and `url` (or `href`) commands, respectively. The `zap` command keeps the same `-d` (or `--directory`) and `-t` (or `--type`) as before, but will default to the current directory and markdown files ending in `.md`.
 
-The cli utility defaults to the current directory and markdown files, specifically with the `.md` extension. This can optionally be changed (with `-t`) to `.markdown`, `.html`, or `.htm` files and a different directory can be specified (with `-d`).
+For specifics about a give command, invoke the command followed by `-h`, such as `emoji-transmogrifier zap -h`.
+
+```sh
+  Usage: emoji-transmogrifier <cmd>
+
+
+  Commands:
+
+    zap [options]   convert emoji short codes in specified files to image tags
+    unicode|uni     returns the unicode interpretation of the given emoji short code
+    url|href        returns the GitHub url of the given emoji by short code
+
+  Options:
+
+    -h, --help  output usage information
+```
 
 #### Server Module
 ```js
@@ -58,14 +71,13 @@ The pattern itself:
 /(\:(\w|\+|\-)+\:)(?=\s|[\!\.\?]|$)/gim
 ```
 
-## Future Plans
-Currently plan:
+## Road Map
 
 - [X] complete coveralls implementation
-- add alternate cli function of exposing the internal methods to the 'server' module
-  - provide return of image path (href)
-  - provide return of unicode string
-- provide current conversion function ability to traverse subdirectories
+- [x] add alternate cli function of exposing the internal methods to the 'server' module
+  - [x] provide return of image path (href)
+  - [x] provide return of unicode string
+- [ ] provide current conversion function ability to traverse subdirectories
 
 ## Contributing
 You may contribute by submitting [a Pull Request](https://help.github.com/articles/proposing-changes-to-a-project-with-pull-requests/) to this repository.
