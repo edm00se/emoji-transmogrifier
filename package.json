@@ -38,8 +38,11 @@
     "semantic-release": "4.3.5"
   },
   "eslintConfig": {
+    "rules": {
+    },
     "extends": "xo-space",
     "env": {
+      "es6": true,
       "mocha": true
     }
   },
