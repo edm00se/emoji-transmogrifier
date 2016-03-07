@@ -22,23 +22,27 @@
     "codecov": "1.0.1",
     "commitizen": "2.5.0",
     "cz-conventional-changelog": "1.1.5",
-    "eslint-config-xo-space": "0.7.0",
+    "eslint-config-xo": "^0.11.0",
+    "eslint-config-xo-space": "0.8.0",
     "ghooks": "1.0.3",
-    "gulp": "3.9.0",
-    "gulp-coveralls": "0.1.0",
-    "gulp-eslint": "1.0.0",
+    "gulp": "^3.9.1",
+    "gulp-coveralls": "0.1.4",
+    "gulp-eslint": "1.1.1",
     "gulp-exclude-gitignore": "1.0.0",
     "gulp-istanbul": "0.10.3",
-    "gulp-mocha": "2.0.0",
-    "gulp-nsp": "2.1.0",
-    "gulp-plumber": "1.0.0",
+    "gulp-mocha": "2.2.0",
+    "gulp-nsp": "2.3.0",
+    "gulp-plumber": "1.1.0",
     "istanbul": "0.4.2",
-    "mocha": "2.3.4",
+    "mocha": "2.4.5",
     "semantic-release": "4.3.5"
   },
   "eslintConfig": {
+    "rules": {
+    },
     "extends": "xo-space",
     "env": {
+      "es6": true,
       "mocha": true
     }
   },
@@ -59,11 +63,11 @@
     "fs": "0.0.2",
     "update-notifier": "0.6.0"
   },
-  "czConfig": {
-    "path": "node_modules/cz-conventional-changelog"
-  },
   "tonicExampleFilename": "example.js",
   "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    },
     "ghooks": {
       "pre-commit": "npm run test && npm run check-coverage"
     }
