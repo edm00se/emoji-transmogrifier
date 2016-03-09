@@ -20,14 +20,14 @@
   ],
   "devDependencies": {
     "codecov": "1.0.1",
-    "commitizen": "2.5.0",
+    "commitizen": "2.6.2",
     "cz-conventional-changelog": "1.1.5",
-    "eslint-config-xo": "^0.11.0",
-    "eslint-config-xo-space": "0.8.0",
+    "eslint-config-xo": "0.12.0",
+    "eslint-config-xo-space": "0.11.0",
     "ghooks": "1.0.3",
     "gulp": "^3.9.1",
     "gulp-coveralls": "0.1.4",
-    "gulp-eslint": "1.1.1",
+    "gulp-eslint": "2.0.0",
     "gulp-exclude-gitignore": "1.0.0",
     "gulp-istanbul": "0.10.3",
     "gulp-mocha": "2.2.0",
@@ -60,8 +60,7 @@
   "license": "MIT",
   "dependencies": {
     "commander": "2.9.0",
-    "fs": "0.0.2",
-    "update-notifier": "0.6.0"
+    "update-notifier": "0.6.1"
   },
   "tonicExampleFilename": "example.js",
   "config": {
