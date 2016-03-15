@@ -1,0 +1,1 @@
+some <img src=https://assets-cdn.github.com/images/icons/emoji/unicode/1f609.png?v5 alt=wink style="height:auto;width:21px;"> stuff complete with <img src=https://assets-cdn.github.com/images/icons/emoji/unicode/1f37a.png?v5 alt=beer style="height:auto;width:21px;">

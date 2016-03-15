@@ -5,6 +5,7 @@ var fs = require('fs');
 var transmogrify = require('../server');
 var re = transmogrify.theRegex;
 var emojisOb = require('../assets/emojis.json');
+var globber = require('glob');
 module.exports = function () {
   updateNotifier({pkg}).notify();
   prog
@@ -13,23 +14,13 @@ module.exports = function () {
 
   prog
     .command('zap')
-    .usage('[options]')
+    .usage('<glob>')
     .description('convert emoji short codes in specified files to image tags')
-    .option('-d, --directory <directory/>', 'The path inside of which to convert (default= ./)')
-    .option('-t, --type [type]', 'The file extensions to work against (default= md)', /^(md|markdown|html|htm)$/i)
-    .action(function () {
-      var my = this;
-      console.log('you want to convert the short codes from the files in:');
-      var filePath = my.directory || './';
-      if (filePath.substr(-1) !== '/') {
-        filePath += '/';
-      }
-      console.log('  - dir ' + filePath);
-      var ext = '.' + (my.type || 'md');
-      console.log('  - extension ' + ext);
+    .action(function (zap, glob) {
       var fCt = 0;
       var mCt = 0;
-      var fileNameAr = fs.readdirSync(filePath);
+      var myGlob = glob||"**/*.md";
+      console.log('glob: ' + myGlob);
       function err(er) {
         if (er) {
           console.log('error: ' + er);
@@ -37,33 +28,38 @@ module.exports = function () {
           console.log('writing file back with updates');
         }
       }
-      for (var i = 0; i < fileNameAr.length; i++) {
-        var curVal = filePath + fileNameAr[i];
-        if (curVal.substr(-ext.length) === ext) {
-          console.log('found a ' + ext + ' file');
-          var file = curVal;
-          var contents = fs.readFileSync(file, 'utf-8');
-          fCt++;
-          if (re.test(contents)) {
-            // console.log('match found in '+file);
-            mCt++;
-            var foundMatch = false;
-            for (var prop in emojisOb) {
-              if (contents.indexOf(':' + prop + ':') > -1) {
-                foundMatch = true;
-                // console.log('found a match for '+prop+' in '+file);
-                var nwRe = new RegExp(':' + prop + ':', 'gi');
-                var url = transmogrify.getImage(prop);
-                contents = contents.replace(nwRe, '<img src=' + url + ' alt=' + prop + ' style="height:auto;width:21px;">');
-              }
-            }
-            if (foundMatch) {
-              fs.writeFile(file, contents, 'utf-8', err);
+      function writeContentsBackToFile(fileName, fileContents){
+        fs.writeFileSync(fileName, fileContents, 'utf-8', err);
+        console.log('  wrote out to ' + curVal );
+      }
+      var files = globber.sync(myGlob);
+      console.log(files.length + ' files: ' + files);
+      for (var i = 0; i < files.length; i++) {
+        var curVal = files[i];
+        console.log('checking ' + curVal + ' for short codes');
+        var contents = fs.readFileSync(curVal, 'utf-8');
+        fCt++;
+        if (re.test(contents)) {
+          mCt++;
+          var foundMatch = false;
+          for (var prop in emojisOb) {
+            if (contents.indexOf(':' + prop + ':') > -1) {
+              // console.log('found a ' + prop + ' in ' + curVal);
+              foundMatch = true;
+              var nwRe = new RegExp(':' + prop + ':', 'gi');
+              var url = transmogrify.getImage(prop);
+              contents = contents.replace(nwRe, '<img src=' + url + ' alt=' + prop + ' style="height:auto;width:21px;">');
             }
           }
+          console.log('  found a match?: ' + foundMatch);
+          if (foundMatch) {
+            writeContentsBackToFile(curVal, contents);
+          }
+        }else{
+          console.log('  failed the short code regex check');
         }
       }
-      console.log('converted ' + mCt + ' occurrences over ' + fCt + ' ' + ext + ' files');
+      console.log('converted ' + mCt + ' occurrences over ' + fCt + ' files');
       console.log('done');
     });
 
