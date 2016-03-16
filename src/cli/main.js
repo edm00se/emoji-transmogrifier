@@ -16,10 +16,13 @@ module.exports = function () {
     .command('zap')
     .usage('<glob>')
     .description('convert emoji short codes in specified files to image tags')
-    .action(function (zap, glob) {
+    .action(function (glob, ob) {
       var fCt = 0;
       var mCt = 0;
-      var myGlob = glob||"**/*.md";
+      var myGlob = '**/*.md';
+      if( typeof glob == "string" ){
+        myGlob = glob;
+      }
       console.log('glob: ' + myGlob);
       function err(er) {
         if (er) {
@@ -28,39 +31,39 @@ module.exports = function () {
           console.log('writing file back with updates');
         }
       }
-      function writeContentsBackToFile(fileName, fileContents){
-        fs.writeFileSync(fileName, fileContents, 'utf-8', err);
-        console.log('  wrote out to ' + curVal );
-      }
-      var files = globber.sync(myGlob);
-      console.log(files.length + ' files: ' + files);
-      for (var i = 0; i < files.length; i++) {
-        var curVal = files[i];
-        console.log('checking ' + curVal + ' for short codes');
-        var contents = fs.readFileSync(curVal, 'utf-8');
-        fCt++;
-        if (re.test(contents)) {
-          mCt++;
-          var foundMatch = false;
-          for (var prop in emojisOb) {
-            if (contents.indexOf(':' + prop + ':') > -1) {
-              // console.log('found a ' + prop + ' in ' + curVal);
-              foundMatch = true;
-              var nwRe = new RegExp(':' + prop + ':', 'gi');
-              var url = transmogrify.getImage(prop);
-              contents = contents.replace(nwRe, '<img src=' + url + ' alt=' + prop + ' style="height:auto;width:21px;">');
-            }
-          }
-          console.log('  found a match?: ' + foundMatch);
-          if (foundMatch) {
-            writeContentsBackToFile(curVal, contents);
-          }
-        }else{
-          console.log('  failed the short code regex check');
+      globber(myGlob, function (er, files) {
+        if (er) {
+          console.log('error: ' + er);
         }
-      }
-      console.log('converted ' + mCt + ' occurrences over ' + fCt + ' files');
-      console.log('done');
+        console.log('scanning ' + files);
+        if( files.length < 1 ){
+          console.log('no files found, matching ' + myGlob);
+        } else {
+          files.forEach(function(curVal, index, array){
+            fCt++;
+            fs.readFile(curVal, 'utf-8',function(err, data){
+              if(err){
+                console.log('  error: ' + err);
+              }
+              if( re.test(data) ){
+                mCt++;
+                var foundMatch = false;
+                for (var prop in emojisOb) {
+                  if (data.indexOf(':' + prop + ':') > -1) {
+                    foundMatch = true;
+                    var nwRe = new RegExp(':' + prop + ':', 'gim');
+                    var url = transmogrify.getImage(prop);
+                    data = data.replace(nwRe, '<img src=' + url + ' alt=' + prop + ' style="height:auto;width:21px;">');
+                  }
+                }
+                if (foundMatch) {
+                  fs.writeFile(curVal, data, 'utf-8', err);
+                }
+              }
+            });
+          });
+        }
+      });
     });
 
   prog
