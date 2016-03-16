@@ -20,7 +20,7 @@ module.exports = function () {
       var fCt = 0;
       var mCt = 0;
       var myGlob = '**/*.md';
-      if (typeof glob === "string"){
+      if (typeof glob === "string") {
         myGlob = glob;
       }
       console.log('glob: ' + myGlob);
@@ -29,12 +29,12 @@ module.exports = function () {
           console.log('error: ' + er);
         }
         console.log('scanning ' + files);
-        if (files.length < 1){
+        if (files.length < 1) {
           console.log('no files found, matching ' + myGlob);
         } else {
-          files.forEach(function(curVal){
+          files.forEach(function (curVal) {
             fCt++;
-            fs.readFile(curVal, 'utf-8',function (err, data) {
+            fs.readFile(curVal, 'utf-8', function (err, data) {
               if (err) {
                 console.log('  error: ' + err);
               }
