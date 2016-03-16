@@ -16,36 +16,29 @@ module.exports = function () {
     .command('zap')
     .usage('<glob>')
     .description('convert emoji short codes in specified files to image tags')
-    .action(function (glob, ob) {
+    .action(function (glob) {
       var fCt = 0;
       var mCt = 0;
       var myGlob = '**/*.md';
-      if( typeof glob == "string" ){
+      if (typeof glob === "string"){
         myGlob = glob;
       }
       console.log('glob: ' + myGlob);
-      function err(er) {
-        if (er) {
-          console.log('error: ' + er);
-        } else {
-          console.log('writing file back with updates');
-        }
-      }
       globber(myGlob, function (er, files) {
         if (er) {
           console.log('error: ' + er);
         }
         console.log('scanning ' + files);
-        if( files.length < 1 ){
+        if (files.length < 1){
           console.log('no files found, matching ' + myGlob);
         } else {
-          files.forEach(function(curVal, index, array){
+          files.forEach(function(curVal){
             fCt++;
-            fs.readFile(curVal, 'utf-8',function(err, data){
-              if(err){
+            fs.readFile(curVal, 'utf-8',function (err, data) {
+              if (err) {
                 console.log('  error: ' + err);
               }
-              if( re.test(data) ){
+              if (re.test(data)) {
                 mCt++;
                 var foundMatch = false;
                 for (var prop in emojisOb) {
