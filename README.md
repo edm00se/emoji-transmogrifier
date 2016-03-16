@@ -30,7 +30,7 @@ For specifics about a give command, invoke the command followed by `-h`, such as
 
   Commands:
 
-    zap [options]   convert emoji short codes in specified files to image tags
+    zap   			convert emoji short codes in specified files (globbing pattern, defaults to `**/*.md`) to image tags
     unicode|uni     returns the unicode interpretation of the given emoji short code
     url|href        returns the GitHub url of the given emoji by short code
 
@@ -69,11 +69,11 @@ The pattern itself:
 
 ## Road Map
 
-- [X] complete coveralls implementation
+- [x] complete coveralls implementation
 - [x] add alternate cli function of exposing the internal methods to the 'server' module
   - [x] provide return of image path (href)
   - [x] provide return of unicode string
-- [ ] provide current conversion function ability to traverse subdirectories
+- [x] provide current conversion function ability to traverse subdirectories
 
 ## Contributing
 You may contribute by submitting [a Pull Request](https://help.github.com/articles/proposing-changes-to-a-project-with-pull-requests/) to this repository.

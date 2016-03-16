@@ -2,7 +2,9 @@
 
 var emojisOb = require('../assets/emojis.json');
 // RegEx pattern, https://regex101.com/r/hI5qF5/1
-var re = /(\:\w+\:)(?=\s|[\!\.\?]|$)/gim;
+// `g` removed, as RegExp in JS is staeful,
+// src: http://bjorn.tipling.com/state-and-regular-expressions-in-javascript
+var re = /(\:\w+\:)(?=\s|[\!\.\?]|$)/im;
 // GitHub API for emoji mapping short name to URL of image
 // var emojisUrl = "https://api.github.com/emojis";
 
