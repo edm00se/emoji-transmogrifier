@@ -1,6 +1,5 @@
 {
   "name": "emoji-transmogrifier",
-  "version": "2.0.3",
   "description": "a handy little library for converting emoji short codes to html image tags",
   "homepage": "https://edm00se.github.io/emoji-transmogrifier",
   "author": {
