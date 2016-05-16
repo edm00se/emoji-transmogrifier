@@ -78,7 +78,7 @@ The pattern itself:
 ## Contributing
 [After signing the CLA](https://cla-assistant.io/edm00se/emoji-transmogrifier), you may contribute by submitting [a Pull Request](https://help.github.com/articles/proposing-changes-to-a-project-with-pull-requests/) to this repository.
 
-1. [Sign the CLI](https://cla-assistant.io/edm00se/emoji-transmogrifier)
+1. [Sign the CLA](https://cla-assistant.io/edm00se/emoji-transmogrifier)
 2. [Fork it](https://github.com/edm00se/emoji-transmogrifier#fork-destination-box)
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -am 'Add some feature'`
