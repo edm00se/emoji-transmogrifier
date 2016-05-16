@@ -58,7 +58,7 @@ This project was born from the need I had to convert the emoji short codes, a la
 ## RegEx Pattern
 At the heard of this task is a [regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) that performs the matching of the short code which is to be replaced.
 
-The RegEx pattern I sttled on can be viewed and tested against the known emoji short codes by viewing the pattern here:
+The RegEx pattern I settled on can be viewed and tested against the known emoji short codes by viewing the pattern here:
 https://regex101.com/r/hI5qF5/1
 
 The pattern itself:
@@ -76,14 +76,7 @@ The pattern itself:
 - [x] provide current conversion function ability to traverse subdirectories
 
 ## Contributing
-[After signing the CLA](https://cla-assistant.io/edm00se/emoji-transmogrifier), you may contribute by submitting [a Pull Request](https://help.github.com/articles/proposing-changes-to-a-project-with-pull-requests/) to this repository.
-
-1. [Sign the CLA](https://cla-assistant.io/edm00se/emoji-transmogrifier)
-2. [Fork it](https://github.com/edm00se/emoji-transmogrifier#fork-destination-box)
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. [Submit a pull request](https://github.com/edm00se/emoji-transmogrifier/compare) :grinning:
+Please [consult and follow the contribution guide](https://github.com/edm00se/emoji-transmogrifier/blob/master/CONTRIBUTING.md) prior to submitting any Pull Requests.
 
 ## License
 
