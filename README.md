@@ -76,9 +76,10 @@ The pattern itself:
 - [x] provide current conversion function ability to traverse subdirectories
 
 ## Contributing
-You may contribute by submitting [a Pull Request](https://help.github.com/articles/proposing-changes-to-a-project-with-pull-requests/) to this repository.
+[After signing the CLA](https://cla-assistant.io/edm00se/emoji-transmogrifier), you may contribute by submitting [a Pull Request](https://help.github.com/articles/proposing-changes-to-a-project-with-pull-requests/) to this repository.
 
-1. [Fork it](https://github.com/edm00se/emoji-transmogrifier#fork-destination-box)
+1. [Sign the CLI](https://cla-assistant.io/edm00se/emoji-transmogrifier)
+2. [Fork it](https://github.com/edm00se/emoji-transmogrifier#fork-destination-box)
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -am 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
