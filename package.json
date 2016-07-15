@@ -7,6 +7,7 @@
     "email": "edm00se@gmail.com",
     "url": "https://edm00se.github.com/emoji-transmogrifier"
   },
+  "version": "0.0.0-semantically-released",
   "files": [
     "src",
     "example.js"
