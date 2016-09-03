@@ -11,6 +11,11 @@ var re = /(\:\w+\:)(?=\s|[\!\.\?]|$)/im; // eslint-disable-line no-useless-escap
 function getImg(key) {
   return emojisOb[key];
 }
+function extractEmojiUnicodeFromUrl(val) {
+  var nwVal = val.split('unicode/')[1].split('?')[0].split('.png')[0];
+  // console.log('found a val: ' + nwVal);
+  return nwVal;
+}
 function getUni(key) {
   try {
     var url = emojisOb[key];
@@ -20,12 +25,9 @@ function getUni(key) {
     return null;
   }
 }
-function extractEmojiUnicodeFromUrl(val) {
-  var nwVal = val.split('unicode/')[1].split('?')[0].split('.png')[0];
-  // console.log('found a val: ' + nwVal);
-  return nwVal;
-}
 
-exports.getImage = getImg;
-exports.getUnicode = getUni;
-exports.theRegex = re;
+module.exports = {
+  getImage: getImg,
+  getUnicode: getUni,
+  theRegex: re
+};
