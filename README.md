@@ -74,6 +74,7 @@ The pattern itself:
   - [x] provide return of image path (href)
   - [x] provide return of unicode string
 - [x] provide current conversion function ability to traverse subdirectories
+- [ ] add `flag-XX` values for two-letter country codes (a la Slack), as discussed in [#19](https://github.com/edm00se/emoji-transmogrifier/issues/19)
 
 ## Contributing
 Please [consult and follow the contribution guide](https://github.com/edm00se/emoji-transmogrifier/blob/master/CONTRIBUTING.md) prior to submitting any Pull Requests.
