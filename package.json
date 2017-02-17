@@ -21,23 +21,23 @@
   ],
   "devDependencies": {
     "codecov": "1.0.1",
-    "commitizen": "2.8.2",
-    "cz-conventional-changelog": "1.1.6",
-    "eslint": "3.2.2",
+    "commitizen": "2.9.6",
+    "cz-conventional-changelog": "1.2.0",
+    "eslint": "3.15.0",
     "eslint-config-xo-space": "0.12.0",
-    "eslint-formatter-pretty": "0.2.2",
-    "ghooks": "1.3.2",
+    "eslint-formatter-pretty": "1.1.0",
     "gulp": "3.9.1",
     "gulp-coveralls": "0.1.4",
     "gulp-eslint": "2.0.0",
-    "gulp-exclude-gitignore": "1.0.0",
-    "gulp-istanbul": "1.0.0",
-    "gulp-mocha": "3.0.0",
+    "gulp-exclude-gitignore": "1.1.1",
+    "gulp-istanbul": "1.1.1",
+    "gulp-mocha": "3.0.1",
     "gulp-nsp": "2.4.2",
     "gulp-plumber": "1.1.0",
+    "husky": "^0.13.1",
     "istanbul": "1.1.0-alpha.1",
-    "mocha": "3.0.0",
-    "semantic-release": "6.3.0"
+    "mocha": "3.2.0",
+    "semantic-release": "6.3.6"
   },
   "eslintConfig": {
     "extends": "xo-space",
@@ -54,6 +54,7 @@
     "url": "https://github.com/edm00se/emoji-transmogrifier.git"
   },
   "scripts": {
+    "precommit": "npm run test && npm run check-coverage",
     "prepublish": "gulp prepublish",
     "test": "gulp && istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec && ./node_modules/codecov/bin/codecov",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
@@ -63,16 +64,13 @@
   "license": "MIT",
   "dependencies": {
     "commander": "2.9.0",
-    "glob": "7.0.5",
-    "update-notifier": "1.0.2"
+    "glob": "7.1.1",
+    "update-notifier": "2.0.0"
   },
   "tonicExampleFilename": "example.js",
   "config": {
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
-    },
-    "ghooks": {
-      "pre-commit": "npm run test && npm run check-coverage"
     }
   }
 }
