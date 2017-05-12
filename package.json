@@ -19,6 +19,24 @@
     "image",
     "convert"
   ],
+  "scripts": {
+    "precommit": "npm run test && npm run check-coverage",
+    "commit": "git-cz",
+    "prepublish": "gulp prepublish",
+    "test": "gulp && istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec && ./node_modules/codecov/bin/codecov",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100 && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js || true"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edm00se/emoji-transmogrifier.git"
+  },
+  "dependencies": {
+    "commander": "2.9.0",
+    "glob": "7.1.1",
+    "update-notifier": "2.0.0"
+  },
   "devDependencies": {
     "codecov": "1.0.1",
     "commitizen": "2.9.6",
@@ -39,6 +57,12 @@
     "mocha": "3.2.0",
     "semantic-release": "6.3.6"
   },
+  "tonicExampleFilename": "example.js",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
   "eslintConfig": {
     "extends": "xo-space",
     "env": {
@@ -47,30 +71,6 @@
     },
     "options": {
       "format": "node_modules/eslint-formatter-pretty"
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/edm00se/emoji-transmogrifier.git"
-  },
-  "scripts": {
-    "precommit": "npm run test && npm run check-coverage",
-    "prepublish": "gulp prepublish",
-    "test": "gulp && istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec && ./node_modules/codecov/bin/codecov",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "commit": "git-cz",
-    "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100 && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js || true"
-  },
-  "license": "MIT",
-  "dependencies": {
-    "commander": "2.9.0",
-    "glob": "7.1.1",
-    "update-notifier": "2.0.0"
-  },
-  "tonicExampleFilename": "example.js",
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
     }
   }
 }

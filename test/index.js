@@ -6,10 +6,10 @@ var transmogrify = require('../src/server');
 describe('emoji-transmogrifier', function () {
   it('should get image urls from short code', function () {
     assert.equal(transmogrify.getImage('beers'),
-		'https://assets-cdn.github.com/images/icons/emoji/unicode/1f37b.png?v6',
+		'https://assets-cdn.github.com/images/icons/emoji/unicode/1f37b.png?v7',
 		'beers == correct GH url');
     assert.equal(transmogrify.getImage('post_office'),
-		'https://assets-cdn.github.com/images/icons/emoji/unicode/1f3e3.png?v6',
+		'https://assets-cdn.github.com/images/icons/emoji/unicode/1f3e3.png?v7',
 		'post_office == correct GH url');
   });
   it('should handle unicode conversion from short code', function () {
