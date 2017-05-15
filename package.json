@@ -28,7 +28,7 @@
     "commit": "git-cz",
     "prepublish": "nsp check",
     "test": "jest --coverage",
-    "watch": "jest --watchAll --coverage",
+    "watch": "jest --watch --coverage",
     "format": "prettier-eslint \"src/**/*.js\" --write",
     "lint": "eslint src/**/*.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
@@ -44,6 +44,7 @@
     "update-notifier": "2.1.0"
   },
   "devDependencies": {
+    "array-equal": "1.0.0",
     "chai": "4.0.0-canary.2",
     "codecov": "2.2.0",
     "commitizen": "2.9.6",
