@@ -8,18 +8,12 @@ notifications:
 node_js:
   - 7
   - 6
-  - 5
   - 4
-  - '0.12'
-before_install:
-  - npm i -g npm@^3.0.0
 before_script:
   - npm prune
+  - npm install codecov
 script:
-  - npm run test
-  - npm run check-coverage
+  - npm test
 after_success:
+  - codecov
   - npm run semantic-release
-branches:
-  except:
-    - "/^v\\d+\\.\\d+\\.\\d+$/"
