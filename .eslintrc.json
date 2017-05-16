@@ -2,7 +2,7 @@
   "eslintConfig": {
     "extends": "xo-space",
     "env": {
-      "mocha": true,
+      "jest": true,
       "node": true
     },
     "options": {
