@@ -1,0 +1,14 @@
+{
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "node": true
+    },
+    "options": {
+      "format": "node_modules/eslint-formatter-pretty"
+    }
+  },
+  "rules": {
+    "quotes": ["warn", "single"]
+  }
+}

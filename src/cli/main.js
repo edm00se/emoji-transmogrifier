@@ -6,21 +6,21 @@ var transmogrify = require('../api');
 var re = transmogrify.theRegex;
 var emojisOb = require('../assets/emojis.json');
 var globber = require('glob');
-module.exports = function () {
-  updateNotifier({pkg}).notify();
+module.exports = function() {
+  updateNotifier({ pkg: pkg }).notify(); /* eslint-disable-line */
   prog.version(pkg.version).usage('<cmd>');
 
   prog
     .command('zap')
     .usage('<glob>')
     .description('convert emoji short codes in specified files to image tags')
-    .action(function (glob) {
+    .action(function(glob) {
       var myGlob = '**/*.md';
       if (typeof glob === 'string') {
         myGlob = glob;
       }
       console.log('glob: ' + myGlob);
-      globber(myGlob, function (er, files) {
+      globber(myGlob, function(er, files) {
         if (er) {
           console.log('error: ' + er);
         }
@@ -28,8 +28,8 @@ module.exports = function () {
         if (files.length < 1) {
           console.log('no files found, matching ' + myGlob);
         } else {
-          files.forEach(function (curVal) {
-            fs.readFile(curVal, 'utf-8', function (err, data) {
+          files.forEach(function(curVal) {
+            fs.readFile(curVal, 'utf-8', function(err, data) {
               if (err) {
                 console.log('  error: ' + err);
               }
@@ -67,7 +67,7 @@ module.exports = function () {
     .description(
       'returns the unicode interpretation of the given emoji short code'
     )
-    .action(function (shortCode) {
+    .action(function(shortCode) {
       console.log(String.fromCodePoint(transmogrify.getUnicode(shortCode)));
     });
 
@@ -76,7 +76,7 @@ module.exports = function () {
     .alias('href')
     .usage('<shortCode>')
     .description('returns the GitHub url of the given emoji by short code')
-    .action(function (shortCode) {
+    .action(function(shortCode) {
       console.log(transmogrify.getImage(shortCode));
     });
 

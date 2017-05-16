@@ -17,6 +17,13 @@ function isRange(val) {
   // String.prototype.includes is nice, but...
   return val.indexOf('-') !== -1;
 }
+function arrayMapUnicodePrefix(ar) {
+  var nw = [];
+  ar.forEach(function(val) {
+    nw.push(UNI_PREFIX + val);
+  });
+  return nw;
+}
 function extractEmojiUnicodeFromUrl(val) {
   var nwVal;
   var tmp = val.split('unicode/')[1].split('?')[0].split('.png')[0];
@@ -40,13 +47,6 @@ function getUni(key) {
   } catch (e) {
     return null;
   }
-}
-function arrayMapUnicodePrefix(ar) {
-  var nw = [];
-  ar.forEach(function (val) {
-    nw.push(UNI_PREFIX + val);
-  });
-  return nw;
 }
 
 module.exports = {

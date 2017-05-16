@@ -30,7 +30,7 @@
     "test": "jest --coverage",
     "watch": "jest --watch --coverage",
     "format": "prettier-eslint \"src/**/*.js\" --write",
-    "lint": "eslint src/**/*.js",
+    "lint": "eslint **/*.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "license": "MIT",
@@ -63,16 +63,6 @@
   "config": {
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
-    }
-  },
-  "eslintConfig": {
-    "extends": "xo-space",
-    "env": {
-      "es6": true,
-      "mocha": true
-    },
-    "options": {
-      "format": "node_modules/eslint-formatter-pretty"
     }
   },
   "lint-staged": {
