@@ -11,7 +11,9 @@ node_js:
   - 4
 before_script:
   - npm prune
+  - npm install codecov
 script:
   - npm test
 after_success:
+  - codecov
   - npm run semantic-release
