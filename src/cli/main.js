@@ -1,57 +1,57 @@
-var updateNotifier = require('update-notifier');
-var pkg = require('../../package.json');
-var prog = require('commander');
-var fs = require('fs');
-var transmogrify = require('../api');
+var updateNotifier = require("update-notifier");
+var pkg = require("../../package.json");
+var prog = require("commander");
+var fs = require("fs");
+var transmogrify = require("../api");
 var re = transmogrify.theRegex;
-var emojisOb = require('../assets/emojis.json');
-var globber = require('glob');
+var emojisOb = require("../assets/emojis.json");
+var globber = require("glob");
 module.exports = function() {
   updateNotifier({ pkg: pkg }).notify(); /* eslint-disable-line */
-  prog.version(pkg.version).usage('<cmd>');
+  prog.version(pkg.version).usage("<cmd>");
 
   prog
-    .command('zap')
-    .usage('<glob>')
-    .description('convert emoji short codes in specified files to image tags')
+    .command("zap")
+    .usage("<glob>")
+    .description("convert emoji short codes in specified files to image tags")
     .action(function(glob) {
-      var myGlob = '**/*.md';
-      if (typeof glob === 'string') {
+      var myGlob = "**/*.md";
+      if (typeof glob === "string") {
         myGlob = glob;
       }
-      console.log('glob: ' + myGlob);
+      console.log("glob: " + myGlob);
       globber(myGlob, function(er, files) {
         if (er) {
-          console.log('error: ' + er);
+          console.log("error: " + er);
         }
-        console.log('scanning ' + files);
+        console.log("scanning " + files);
         if (files.length < 1) {
-          console.log('no files found, matching ' + myGlob);
+          console.log("no files found, matching " + myGlob);
         } else {
           files.forEach(function(curVal) {
-            fs.readFile(curVal, 'utf-8', function(err, data) {
+            fs.readFile(curVal, "utf-8", function(err, data) {
               if (err) {
-                console.log('  error: ' + err);
+                console.log("  error: " + err);
               }
               if (re.test(data)) {
                 var foundMatch = false;
                 for (var prop in emojisOb) {
-                  if (data.indexOf(':' + prop + ':') > -1) {
+                  if (data.indexOf(":" + prop + ":") > -1) {
                     foundMatch = true;
-                    var nwRe = new RegExp(':' + prop + ':', 'gim');
+                    var nwRe = new RegExp(":" + prop + ":", "gim");
                     var url = transmogrify.getImage(prop);
                     data = data.replace(
                       nwRe,
-                      '<img src=' +
+                      "<img src=" +
                         url +
-                        ' alt=' +
+                        " alt=" +
                         prop +
                         ' style="height:auto;width:21px;">'
                     );
                   }
                 }
                 if (foundMatch) {
-                  fs.writeFile(curVal, data, 'utf-8', err);
+                  fs.writeFile(curVal, data, "utf-8", err);
                 }
               }
             });
@@ -61,21 +61,21 @@ module.exports = function() {
     });
 
   prog
-    .command('unicode')
-    .alias('uni')
-    .usage('<shortCode>')
+    .command("unicode")
+    .alias("uni")
+    .usage("<shortCode>")
     .description(
-      'returns the unicode interpretation of the given emoji short code'
+      "returns the unicode interpretation of the given emoji short code"
     )
     .action(function(shortCode) {
       console.log(String.fromCodePoint(transmogrify.getUnicode(shortCode)));
     });
 
   prog
-    .command('url')
-    .alias('href')
-    .usage('<shortCode>')
-    .description('returns the GitHub url of the given emoji by short code')
+    .command("url")
+    .alias("href")
+    .usage("<shortCode>")
+    .description("returns the GitHub url of the given emoji by short code")
     .action(function(shortCode) {
       console.log(transmogrify.getImage(shortCode));
     });
