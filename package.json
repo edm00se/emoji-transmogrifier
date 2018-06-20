@@ -28,7 +28,7 @@
     "commit": "git-cz",
     "prepublish": "nsp check",
     "test": "jest --coverage",
-    "watch": "jest --watch --coverage",
+    "watch": "jest --watchAll --coverage",
     "format": "prettier-eslint \"src/**/*.js\" --write",
     "lint": "eslint **/*.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
