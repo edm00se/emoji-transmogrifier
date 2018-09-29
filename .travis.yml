@@ -9,10 +9,13 @@ node_js:
   - node
   - lts/*
 before_script:
-  - npm prune
   - npm install codecov
 script:
   - npm test
 after_success:
   - codecov
-  - npm run semantic-release
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+    - npx travis-deploy-once "npx semantic-release"
