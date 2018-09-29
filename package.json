@@ -26,12 +26,10 @@
   "scripts": {
     "precommit": "lint-staged && npm run test",
     "commit": "git-cz",
-    "prepublish": "nsp check",
     "test": "jest --coverage",
     "watch": "jest --watchAll --coverage",
     "format": "prettier-eslint \"src/**/*.js\" --write",
-    "lint": "eslint **/*.js",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "lint": "eslint **/*.js"
   },
   "license": "MIT",
   "repository": {
@@ -55,7 +53,6 @@
     "istanbul": "1.1.0-alpha.1",
     "jest": "20.0.1",
     "lint-staged": "3.4.1",
-    "nsp": "2.6.3",
     "prettier-eslint-cli": "3.4.3",
     "semantic-release": "6.3.6"
   },
