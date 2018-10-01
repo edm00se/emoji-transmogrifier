@@ -74,14 +74,14 @@ The pattern itself:
   - [x] provide return of image path (href)
   - [x] provide return of unicode string
 - [x] provide current conversion function ability to traverse subdirectories
-- [ ] add `flag-XX` values for two-letter country codes (a la Slack), as discussed in [#19](https://github.com/edm00se/emoji-transmogrifier/issues/19)
+- [x] add range support, as discussed in [#20](https://github.com/edm00se/emoji-transmogrifier/issues/20)
 
 ## Contributing
 Please [consult and follow the contribution guide](https://github.com/edm00se/emoji-transmogrifier/blob/master/CONTRIBUTING.md) prior to submitting any Pull Requests.
 
 ## License
 
-MIT © [Eric McCormick](https://github.com/edm00se)
+MIT
 
 
 [npm-image]: https://badge.fury.io/js/emoji-transmogrifier.svg
