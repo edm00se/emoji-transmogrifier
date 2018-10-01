@@ -49,5 +49,35 @@ describe("api:ranges", function() {
       arEq(transmogrify.getUnicode("afghanistan"), ["0x1f1e6", "0x1f1eb"]),
       'afghanistan code returns array of ["0x1f1e6","0x1f1eb"]'
     );
+    assert.equal(
+      true,
+      arEq(transmogrify.getUnicode("iraq"), ["0x1f1ee", "0x1f1f6"]),
+      'iraq code returns array of ["0x1f1ee","0x1f1f6"]'
+    );
+    assert.equal(
+      true,
+      arEq(transmogrify.getUnicode("canada"), ["0x1f1e8", "0x1f1e6"]),
+      'canada code returns array of ["0x1f1e8","0x1f1e6"]'
+    );
+    assert.equal(
+      true,
+      arEq(transmogrify.getUnicode("us"), ["0x1f1fa", "0x1f1f8"]),
+      'us code returns array of ["0x1f1fa","0x1f1f8"]'
+    );
+    assert.equal(
+      true,
+      arEq(transmogrify.getUnicode("puerto_rico"), ["0x1f1f5", "0x1f1f7"]),
+      'puerto_rico code returns array of ["0x1f1f5","0x1f1f7"]'
+    );
+    assert.equal(
+      true,
+      arEq(transmogrify.getUnicode("mexico"), ["0x1f1f2", "0x1f1fd"]),
+      'mexico code returns array of ["0x1f1f2","0x1f1fd"]'
+    );
+    assert.equal(
+      true,
+      arEq(transmogrify.getUnicode("ireland"), ["0x1f1ee", "0x1f1ea"]),
+      'canada code returns array of ["0x1f1ee","0x1f1ea"]'
+    );
   });
 });
