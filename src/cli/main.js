@@ -51,7 +51,7 @@ module.exports = function() {
                   }
                 }
                 if (foundMatch) {
-                  fs.writeFile(curVal, data, 'utf-8', function(err) {
+                  fs.writeFile(curVal, data, 'utf-8', function(writeErr) {
                     if (writeErr) {
                       console.log(writeErr);
                     }
