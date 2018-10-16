@@ -51,7 +51,11 @@ module.exports = function() {
                   }
                 }
                 if (foundMatch) {
-                  fs.writeFile(curVal, data, 'utf-8', err);
+                  fs.writeFile(curVal, data, 'utf-8', function(err) {
+                    if (writeErr) {
+                      console.log(writeErr);
+                    }
+                  });
                 }
               }
             });
