@@ -26,7 +26,10 @@ function arrayMapUnicodePrefix(ar) {
 }
 function extractEmojiUnicodeFromUrl(val) {
   var nwVal;
-  var tmp = val.split('unicode/')[1].split('?')[0].split('.png')[0];
+  var tmp = val
+    .split('unicode/')[1]
+    .split('?')[0]
+    .split('.png')[0];
   if (isRange(tmp)) {
     var ar = tmp.split('-');
     nwVal = [ar[0], ar[1]];

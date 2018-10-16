@@ -28,7 +28,7 @@
     "commit": "git-cz",
     "test": "jest --coverage",
     "watch": "jest --watchAll --coverage",
-    "format": "prettier-eslint \"src/**/*.js\" --write",
+    "format": "prettier-eslint \"src/**/*.js\" --single-quote --write",
     "lint": "eslint **/*.js"
   },
   "license": "MIT",
@@ -65,7 +65,7 @@
   },
   "lint-staged": {
     "src/**/*.js": [
-      "prettier-eslint --write",
+      "prettier-eslint --single-quote --write",
       "git add"
     ]
   },
