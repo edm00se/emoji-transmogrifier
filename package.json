@@ -37,25 +37,25 @@
     "url": "https://github.com/edm00se/emoji-transmogrifier.git"
   },
   "dependencies": {
-    "commander": "2.19.0",
+    "commander": "2.20.0",
     "glob": "7.1.3",
     "update-notifier": "2.5.0"
   },
   "devDependencies": {
     "array-equal": "1.0.0",
     "chai": "4.2.0",
-    "codecov": "3.1.0",
-    "commitizen": "3.0.2",
+    "codecov": "3.3.0",
+    "commitizen": "^3.1.1",
     "cz-conventional-changelog": "2.1.0",
-    "eslint-config-xo-space": "0.20.0",
-    "eslint-formatter-pretty": "1.3.0",
-    "husky": "1.1.2",
+    "eslint-config-xo-space": "0.21.0",
+    "eslint-formatter-pretty": "2.1.1",
+    "husky": "1.3.1",
     "istanbul": "1.1.0-alpha.1",
-    "jest": "23.6.0",
-    "lint-staged": "7.3.0",
+    "jest": "24.7.1",
+    "lint-staged": "8.1.5",
     "prettier-eslint-cli": "4.7.1",
-    "semantic-release": "15.10.2",
-    "travis-deploy-once": "5.0.9"
+    "semantic-release": "^15.13.12",
+    "travis-deploy-once": "5.0.11"
   },
   "tonicExampleFilename": "example.js",
   "config": {
