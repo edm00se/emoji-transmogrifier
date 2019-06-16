@@ -7,7 +7,7 @@
     "email": "edm00se@gmail.com",
     "url": "https://edm00se.codes/"
   },
-  "version": "3.1.5",
+  "version": "0.0.0-semantically-released",
   "files": [
     "src",
     "example.js"
