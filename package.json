@@ -39,7 +39,7 @@
   "dependencies": {
     "commander": "^4.0.1",
     "glob": "7.1.6",
-    "update-notifier": "3.0.1"
+    "update-notifier": "4.0.0"
   },
   "devDependencies": {
     "array-equal": "1.0.0",
