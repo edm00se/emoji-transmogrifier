@@ -1,37 +1,30 @@
 'use strict';
 
-var emojisOb = require('../assets/emojis.json');
+const emojisOb = require('../assets/emojis.json');
 /* RegEx pattern, https://regex101.com/r/hI5qF5/1
  * `g` removed, as RegExp in JS is stateful,
  * src: http://bjorn.tipling.com/state-and-regular-expressions-in-javascript
 */
-var re = /(\:\w+\:)(?=\s|[\!\.\?]|$)/im; // eslint-disable-line no-useless-escape
+const re = /(\:\w+\:)(?=\s|[\!\.\?]|$)/im; // eslint-disable-line no-useless-escape
 // GitHub API for emoji mapping short name to URL of image
 // var emojisUrl = "https://api.github.com/emojis";
-var UNI_PREFIX = '0x';
+const UNI_PREFIX = '0x';
 
-function getImg(key) {
-  return emojisOb[key];
-}
-function isRange(val) {
-  // String.prototype.includes is nice, but...
-  return val.indexOf('-') !== -1;
-}
-function arrayMapUnicodePrefix(ar) {
-  var nw = [];
-  ar.forEach(function(val) {
-    nw.push(UNI_PREFIX + val);
-  });
-  return nw;
-}
+const getImg = key => emojisOb[key];
+
+// String.prototype.includes is nice, but...
+const isRange = val => val.indexOf('-') !== -1;
+
+const arrayMapUnicodePrefix = ar => ar.map(val => UNI_PREFIX + val);
+
 function extractEmojiUnicodeFromUrl(val) {
-  var nwVal;
-  var tmp = val
+  let nwVal;
+  const tmp = val
     .split('unicode/')[1]
     .split('?')[0]
     .split('.png')[0];
   if (isRange(tmp)) {
-    var ar = tmp.split('-');
+    const ar = tmp.split('-');
     nwVal = [ar[0], ar[1]];
   } else {
     nwVal = tmp;
