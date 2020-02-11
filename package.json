@@ -13,8 +13,8 @@
     "example.js"
   ],
   "engines": {
-    "node": ">=4.5.0",
-    "npm": ">=3.0.0"
+    "node": ">=10.13.0",
+    "npm": ">=6.0.0"
   },
   "main": "./src/server/index.js",
   "bin": "./src/cli/index.js",

@@ -1,12 +1,12 @@
 'use strict';
 
-var assert = require('assert');
-var transmogrify = require('.');
-var arEq = require('array-equal');
-var verSuffix = '?v8';
+const assert = require('assert');
+const transmogrify = require('.');
+const arEq = require('array-equal');
+const verSuffix = '?v8';
 
-describe('api', function() {
-  it('should get image urls from short code', function() {
+describe('api', () => {
+  it('should get image urls from short code', () => {
     assert.equal(
       transmogrify.getImage('beers'),
       'https://assets-cdn.github.com/images/icons/emoji/unicode/1f37b.png' +
@@ -20,21 +20,21 @@ describe('api', function() {
       'post_office == correct GH url'
     );
   });
-  it('should handle unicode conversion from short code', function() {
+  it('should handle unicode conversion from short code', () => {
     assert.equal(
       true,
       transmogrify.getUnicode('beers') === '0x1f37b',
       'beers code is 0x1f37b'
     );
   });
-  it('should return null as unicode for bad input', function() {
+  it('should return null as unicode for bad input', () => {
     assert.equal(
       true,
       transmogrify.getUnicode('i am not a valid emoji') === null,
       'bad input returns null unicode'
     );
   });
-  it('should have tests for the cli component', function() {
+  it('should have tests for the cli component', () => {
     assert(
       true,
       "but let's face it, it assumes defaults for all options and just runs"
