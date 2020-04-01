@@ -37,7 +37,7 @@
     "url": "https://github.com/edm00se/emoji-transmogrifier.git"
   },
   "dependencies": {
-    "commander": "^4.1.1",
+    "commander": "^5.0.0",
     "glob": "7.1.6",
     "update-notifier": "^4.1.0"
   },
