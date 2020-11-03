@@ -1,6 +1,6 @@
 # emoji-transmogrifier
 
-[![NPM version][npm-image]][npm-url] [![NPM downloads][npm-downloads]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Codecov][codecov-image]][codecov-url] [![Codacy Badge](https://api.codacy.com/project/badge/grade/ffa1d59c52fe402796c373de4bc840d2)](https://www.codacy.com/app/edm00se/emoji-transmogrifier) [![semantic-release][semantic-release-image]][semantic-release-url] [![npm][npm-license]][npm-url]
+[![NPM version][npm-image]][npm-url] [![NPM downloads][npm-downloads]][npm-url] [![Build Status][gh-action-image]][gh-action-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Codecov][codecov-image]][codecov-url] [![Codacy Badge](https://api.codacy.com/project/badge/grade/ffa1d59c52fe402796c373de4bc840d2)](https://www.codacy.com/app/edm00se/emoji-transmogrifier) [![semantic-release][semantic-release-image]][semantic-release-url] [![npm][npm-license]][npm-url]
 
 > A handy little library (written as a Node.js module) for converting emoji short codes into HTML image tags. This is mostly a project to force myself to go through all the steps of creating a Node module.
 
@@ -88,8 +88,8 @@ MIT
 [npm-downloads]: https://img.shields.io/npm/dt/emoji-transmogrifier.svg
 [npm-url]: https://npmjs.org/package/emoji-transmogrifier
 [npm-license]: https://img.shields.io/npm/l/emoji-transmogrifier.svg
-[travis-image]: https://travis-ci.org/edm00se/emoji-transmogrifier.svg?branch=master
-[travis-url]: https://travis-ci.org/edm00se/emoji-transmogrifier
+[gh-action-image]: https://github.com/edm00se/emoji-transmogrifier/workflows/Node%20CI/badge.svg?branch=master
+[gh-action-url]: https://github.com/edm00se/emoji-transmogrifier/actions?query=workflow%3A%22Node+CI%22
 [daviddm-image]: https://david-dm.org/edm00se/emoji-transmogrifier.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/edm00se/emoji-transmogrifier
 [codecov-url]: https://codecov.io/github/edm00se/emoji-transmogrifier
