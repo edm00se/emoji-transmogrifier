@@ -4,7 +4,7 @@ const emojisOb = require('../assets/emojis.json');
 /* RegEx pattern, https://regex101.com/r/hI5qF5/1
  * `g` removed, as RegExp in JS is stateful,
  * src: http://bjorn.tipling.com/state-and-regular-expressions-in-javascript
-*/
+ */
 const re = /(\:\w+\:)(?=\s|[\!\.\?]|$)/im; // eslint-disable-line no-useless-escape
 // GitHub API for emoji mapping short name to URL of image
 // var emojisUrl = "https://api.github.com/emojis";

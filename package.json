@@ -28,7 +28,7 @@
     "commit": "git-cz",
     "test": "jest --coverage",
     "watch": "jest --watchAll --coverage",
-    "format": "prettier-eslint \"src/**/*.js\" --single-quote --write",
+    "format": "prettier-eslint \"src/**/*.js\" --write",
     "lint": "eslint **/*.js"
   },
   "license": "MIT",
@@ -37,7 +37,7 @@
     "url": "https://github.com/edm00se/emoji-transmogrifier.git"
   },
   "dependencies": {
-    "commander": "^6.2.0",
+    "commander": "^7.0.0",
     "glob": "7.1.6",
     "update-notifier": "^5.0.1"
   },
@@ -62,8 +62,14 @@
   },
   "lint-staged": {
     "src/**/*.js": [
-      "prettier-eslint --single-quote --write"
+      "prettier-eslint --write"
     ]
+  },
+  "prettier": {
+    "trailingComma": "none",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true
   },
   "jest": {
     "testEnvironment": "node",
