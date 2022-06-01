@@ -38,7 +38,7 @@
   },
   "dependencies": {
     "commander": "^9.0.0",
-    "glob": "8.0.1",
+    "glob": "8.0.3",
     "update-notifier": "^5.0.1"
   },
   "devDependencies": {
